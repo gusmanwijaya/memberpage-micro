@@ -21,51 +21,47 @@ function Header({ onLight, location }) {
       </div>
       <ul className="flex">
         <li>
-          <Link href="/">
-            <a
-              className={[
-                linkColor,
-                "text-white hover:text-teal-500 text-lg px-6 py-3 font-medium",
-              ].join(" ")}
-            >
-              Home
-            </a>
+          <Link
+            className={[
+              linkColor,
+              "text-white hover:text-teal-500 text-lg px-6 py-3 font-medium",
+            ].join(" ")}
+            to="/"
+          >
+            Home
           </Link>
         </li>
         <li>
-          <Link href="/">
-            <a
-              className={[
-                linkColor,
-                "text-white hover:text-teal-500 text-lg px-6 py-3 font-medium",
-              ].join(" ")}
-            >
-              Pricing
-            </a>
+          <Link
+            className={[
+              linkColor,
+              "text-white hover:text-teal-500 text-lg px-6 py-3 font-medium",
+            ].join(" ")}
+            to="/"
+          >
+            Pricing
           </Link>
         </li>
         <li>
-          <Link href="/">
-            <a
-              className={[
-                linkColor,
-                "text-white hover:text-teal-500 text-lg px-6 py-3 font-medium",
-              ].join(" ")}
-            >
-              Features
-            </a>
+          <Link
+            className={[
+              linkColor,
+              "text-white hover:text-teal-500 text-lg px-6 py-3 font-medium",
+            ].join(" ")}
+            to="/"
+          >
+            Features
           </Link>
         </li>
         <li>
-          <Link href="/">
-            <a
-              className={[
-                linkColor,
-                "text-white hover:text-teal-500 text-lg px-6 py-3 font-medium",
-              ].join(" ")}
-            >
-              Story
-            </a>
+          <Link
+            className={[
+              linkColor,
+              "text-white hover:text-teal-500 text-lg px-6 py-3 font-medium",
+            ].join(" ")}
+            to="/"
+          >
+            Story
           </Link>
         </li>
         <li>

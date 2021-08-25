@@ -1,12 +1,54 @@
 import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
+import users from "constants/api/users";
+import { setAuthorizationHeader } from "configs/axios";
 
-function LoginForm() {
+function LoginForm({ history }) {
   const [email, setEmail] = useState(() => "");
   const [password, setPassword] = useState(() => "");
 
   function submit(e) {
     e.preventDefault();
+
+    users
+      .login({
+        email,
+        password,
+      })
+      .then((res) => {
+        setAuthorizationHeader(res.data.token);
+        users.details().then((detail) => {
+          const production =
+            process.env.REACT_APP_FRONTPAGE_URL ===
+            "https://micro.buildwithangga.id"
+              ? "Domain = micro.buildwithangga.id"
+              : "";
+          localStorage.setItem(
+            "MICRO:token",
+            JSON.stringify({
+              ...res.data,
+              email: email,
+            })
+          );
+
+          const redirect = localStorage.getItem("MICRO:redirect");
+          const userCookie = {
+            name: detail.data.name,
+            thumbnail: detail.data.avatar,
+          };
+
+          const expires = new Date(
+            new Date().getTime() + 7 * 24 * 60 * 60 * 1000
+          );
+
+          document.cookie = `MICRO:user=${JSON.stringify(
+            userCookie
+          )}; expires=${expires.toUTCString()}; path:/; ${production}`;
+
+          history.push(redirect || "/");
+        });
+      })
+      .catch((err) => {});
   }
 
   return (
