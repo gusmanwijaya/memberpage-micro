@@ -2,8 +2,12 @@ import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
 import users from "constants/api/users";
 import { setAuthorizationHeader } from "configs/axios";
+import { useDispatch } from "react-redux";
+import { populateProfile } from "./store/actions/users";
 
 function LoginForm({ history }) {
+  const dispatch = useDispatch();
+
   const [email, setEmail] = useState(() => "");
   const [password, setPassword] = useState(() => "");
 
@@ -18,6 +22,7 @@ function LoginForm({ history }) {
       .then((res) => {
         setAuthorizationHeader(res.data.token);
         users.details().then((detail) => {
+          dispatch(populateProfile(detail.data));
           const production =
             process.env.REACT_APP_FRONTPAGE_URL ===
             "https://micro.buildwithangga.id"
