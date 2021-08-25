@@ -1,15 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import { withRouter } from "react-router-dom";
 import users from "constants/api/users";
 import { setAuthorizationHeader } from "configs/axios";
 import { useDispatch } from "react-redux";
 import { populateProfile } from "./store/actions/users";
+import useForm from "helpers/hooks/useForm";
 
 function LoginForm({ history }) {
   const dispatch = useDispatch();
 
-  const [email, setEmail] = useState(() => "");
-  const [password, setPassword] = useState(() => "");
+  const [{ email, password }, setState] = useForm({
+    email: "",
+    password: "",
+  });
 
   function submit(e) {
     e.preventDefault();
@@ -72,7 +75,7 @@ function LoginForm({ history }) {
             <input
               type="email"
               name="email"
-              onChange={(event) => setEmail(event.target.value)}
+              onChange={setState}
               className="bg-white focus: outline-none border w-full px-6 py-3 border-gray-600 focus:border-teal-500"
               value={email}
               placeholder="Your email address"
@@ -86,7 +89,7 @@ function LoginForm({ history }) {
             <input
               type="password"
               name="password"
-              onChange={(event) => setPassword(event.target.value)}
+              onChange={setState}
               className="bg-white focus: outline-none border w-full px-6 py-3 border-gray-600 focus:border-teal-500"
               value={password}
               placeholder="Your password"
