@@ -3,7 +3,7 @@ import { withRouter } from "react-router-dom";
 import users from "constants/api/users";
 import { setAuthorizationHeader } from "configs/axios";
 import { useDispatch } from "react-redux";
-import { populateProfile } from "./store/actions/users";
+import { populateProfile } from "store/actions/users";
 import useForm from "helpers/hooks/useForm";
 
 function LoginForm({ history }) {

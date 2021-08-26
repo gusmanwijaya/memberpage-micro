@@ -123,7 +123,7 @@ function RegisterForm({ history }) {
             style={{ width: 324, height: 374 }}
           ></div>
           <div className="absolute w-full h-full -mb-8 -ml-8">
-            <img src="assets/images/james.jpg" alt="Hero Image" />
+            <img src="assets/images/james.jpg" alt="Hero" />
           </div>
           <div
             className="absolute z-10 bg-white bottom-0 right-0 py-3 px-4 -mr-12"
