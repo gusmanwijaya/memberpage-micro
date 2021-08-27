@@ -39,7 +39,6 @@ export default function Transactions() {
     orders
       .all()
       .then((res) => {
-        console.log(res);
         dispatch(fetchOrders(res.data));
       })
       .catch((err) => {
