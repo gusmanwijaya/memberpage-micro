@@ -5,7 +5,7 @@ import { Link, withRouter } from "react-router-dom";
 import { ReactComponent as Logo } from "assets/images/logo.svg";
 
 function Header({ onLight, location }) {
-  const linkColor = onLight ? "text-gray-900" : "text-white";
+  const linkColor = onLight ? "text-white sm:text-gray-900" : "text-white";
 
   const [toggleMenu, setToggleMenu] = React.useState(false);
 
@@ -86,7 +86,7 @@ function Header({ onLight, location }) {
             Story
           </Link>
         </li>
-        <li className="leading-10">
+        <li className="leading-10 mt-4 sm:mt-0">
           <Link
             to={linkCTA}
             className="bg-indigo-700 hover:bg-indigo-800 transition-all duration-200 text-white hover:text-teal-500 text-lg px-6 py-3 my-4 sm:my-0 font-medium ml-6"

@@ -101,7 +101,7 @@ export default function Transactions() {
                               : "-"}
                           </h6>
                         </div>
-                        <div className="w-3/12 px-4 flex justify-center">
+                        <div className="w-full sm:w-3/12 px-0 sm:px-4 mt-2 sm:mt-0 flex justify-start sm:justify-center">
                           {item?.status === "pending" && (
                             <a
                               href={item?.snap_url}
