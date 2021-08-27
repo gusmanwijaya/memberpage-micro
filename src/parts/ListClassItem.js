@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export default function ListClassItem({ data }) {
   return (
-    <div className="w-full md:w-1/4 px-4 mb-6 md:mb-4">
+    <div className="w-full sm:w-1/4 px-4 mb-4">
       <div className="item relative">
         <figure className="item-image">
           <IconPlay></IconPlay>

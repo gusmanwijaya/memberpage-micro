@@ -46,13 +46,13 @@ export default function Joined({ history, match }) {
         alt="Illustration Joined"
       />
       <h1 className="text-3xl text-gray-900 mt-12">Welcome to Class</h1>
-      <p className="text-lg text-gray-600 mt-4 mb-8 mx-auto text-center">
+      <p className="text-lg text-gray-600 mt-4 mb-8 lg:w-4/12 xl:w-3/12 mx-auto text-center">
         You have successfully joined our{" "}
         <strong>{state?.data?.name ?? "Class Name"}</strong> class
       </p>
       <Link
         to={`/courses/${match.params.class}`}
-        className="bg-orange-500 hover:bg-orange-400 transition-all duration-200 focus:outline-none shadow-inner text-white px-6 py-3"
+        className="cursor-pointer bg-orange-500 hover:bg-orange-400 transition-all duration-200 focus:outline-none shadow-inner text-white px-6 py-3 mt-5"
       >
         Start learn
       </Link>

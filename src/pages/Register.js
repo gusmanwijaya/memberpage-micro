@@ -11,7 +11,7 @@ export default function Register({ history }) {
 
   return (
     <>
-      <section className="container mx-auto pt-10 guest-page relative z-10">
+      <section className="container mx-auto pt-10 px-4 guest-page relative z-10">
         <Header onLight></Header>
       </section>
 
