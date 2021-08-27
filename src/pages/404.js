@@ -8,7 +8,7 @@ export default function NotFound() {
         src={`${process.env.PUBLIC_URL}/assets/images/illustration-notfound.jpg`}
         alt="Illustration Not Found"
       />
-      <h1 className="text-3xl text-gray-900 mt-12">Opps! We're</h1>
+      <h1 className="text-3xl text-gray-900 mt-12">Opps! We're losing you.</h1>
       <p className="text-lg text-gray-600 mt-4 mb-8 mx-auto text-center">
         This page that you requested is not found in our system
       </p>

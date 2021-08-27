@@ -14,6 +14,8 @@ import MyClass from "pages/MyClass";
 import Register from "pages/Register";
 import Joined from "pages/Joined";
 import DetailsClass from "pages/DetailsClass";
+import Settings from "pages/Settings";
+import Transactions from "pages/Transactions";
 
 import { setAuthorizationHeader } from "configs/axios";
 
@@ -64,6 +66,11 @@ function App() {
             exact
             path="/courses/:class/"
             component={DetailsClass}
+          ></MemberRoute>
+          <MemberRoute path="/settings" component={Settings}></MemberRoute>
+          <MemberRoute
+            path="/transactions"
+            component={Transactions}
           ></MemberRoute>
 
           <Route path="*" component={NotFound}></Route>
