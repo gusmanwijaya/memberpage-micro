@@ -103,12 +103,14 @@ export default function Transactions() {
                         </div>
                         <div className="w-3/12 px-4 flex justify-center">
                           {item?.status === "pending" && (
-                            <Link
-                              to={`/joined/${item?.course_id}`}
+                            <a
+                              href={item?.snap_url}
+                              target="_blank"
+                              rel="noopener noreferrer"
                               className="bg-orange-500 hover:bg-orange-400 transition-all duration-200 focus:outline-none text-white px-6 py-3 mt-0 sm:mt-4 whitespace-nowrap ml-4 sm:ml-0"
                             >
                               Lunasi
-                            </Link>
+                            </a>
                           )}
                           {item?.status === "success" && (
                             <Link
